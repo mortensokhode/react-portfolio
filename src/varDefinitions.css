@@ -1,0 +1,26 @@
+:root {
+  /*  Color definitions */
+  /*  --------------------------  */
+  
+  /*  Basic background colors*/
+  --lightBackGround: #f4e7d2;
+  --darkBackGround: #31302c;
+  
+  /*  textColor: */
+  --lightColor: #f4e7d2;
+  --darkColorFull: #31302c;
+  --darkColorReduced: #31302cba;
+
+    /*  Size definitions  */
+    --mainWidth: 1500px;
+    --mainHeight: 2500px;
+    --toplineSideWidth: 10vw;
+    --middleSectionWidth: 70vw;
+    --ingressBoxWidth: 30vw;
+    
+    /*   Layout definitions  */
+    --generalRoundCorner: 16px;
+    --evenMoreRoundedCorner: 32px;
+   
+  }
+  

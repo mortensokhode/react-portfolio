@@ -1,34 +1,227 @@
+/* General CSS */
+html, body {
+  margin: 0 auto;
+  font-family: 'Montserrat', 'Roboto', sans-serif;
+  background-color: var(--lightBackGround);
+  background-blend-mode: normal;
+  
+  color: var(--lightColor);
+  font-size: 100%;
+  max-height: var(--mainHeight);
+  max-width: var(--mainWidth);
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: var(--lightColor);
+}
+
+h1 {
+  font-size: 3rem;
+}  
+
+/*  hovedapplikasjon  */
 .App {
+  margin: 0 auto;
   text-align: center;
+  height: var(--mainHeight);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* topline CSS */
+.topline-sticky {
+  margin: 0 auto;
+  padding: 0; 
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}  
+
+.topSpace {
+  margin-top: 10vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+
+.bottomSpace {
+  margin-bottom: 10vh;
+}
+
+.topline-box {
+  background-color: transparent;
+  width: 100%;
+  height: 15vh;
+  opacity: transparent;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.topline-content-box {
+  padding-left: 3.5em;
+  margin: 0;
+  width: var(--toplineSideWidth);
+  height: 100%;
+}
+
+.left-side-box, .right-side-box {
+  background-color: transparent;
+  width: var(--toplineSideWidth);
+}
+
+.left-side-box {
+  display: flex;
+  flex-direction:row-reverse;
+  justify-content: flex-start;
+  align-content: center;
+  padding-top: 0.5em;
+  border-radius: 0 var(--generalRoundCorner) var(--generalRoundCorner) 0;
+}
+
+.right-side-box {
+  border-radius: var(--generalRoundCorner) 0 0 var(--generalRoundCorner);
+}
+
+.menuClass {
+  margin-top: 5px;
+}
+
+.IngressRamme {
+  margin: 2em auto 8em auto;
+  padding: 0;
+  width: var(--middleSectionWidth);
+  height:fit-content;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+
+}
+
+.blurredShadow {
+  border: 1px solid var(--darkColorFull);
+  border-radius: var(--generalRoundCorner);
+  filter: drop-shadow(4px 3px 4px var(--darkColorFull));
+}
+
+.IngressBoks {
+  box-sizing: border-box;
+}
+
+.IngressBoks, .IngressOuter {
+  width: var(--ingressBoxWidth);
+  min-height: 15em;
+  height:fit-content;
+  background-color: var(--lightBackGround);
+  color: var(--darkColorReduced);
+  border-radius: var(--generalRoundCorner);
+  text-overflow: clip;
+}
+
+.IngressBoks h2 {
+  font-size: clamp(1rem, 2.5vw, 2rem); 
+  margin: 0 auto;
+  padding: 1rem 0;
+}  
+
+.IngressBoks h3 {
+  font-size: clamp(0.6rem, 2vw, 1rem); 
+}  
+
+.IngressText, .IngressHeading {
+  animation-name: opacity;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+  margin: 0;
+}
+
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.ThinText {
+  font-weight: 400;
 }
 
-.App-link {
-  color: #61dafb;
+.detailOuter {
+  opacity: 0;
 }
 
-@keyframes App-logo-spin {
+.detailBox, .DetailedText {
+  opacity: inherit;
+}
+
+.detailBox, .detailOuter {
+  margin: 5rem auto 0 auto;
+  padding: 0;
+  width: var(--middleSectionWidth);
+  background-color: var(--lightBackGround);
+  color: var(--darkColorReduced);
+  border-radius: var(--generalRoundCorner);
+  z-index: 500;
+}
+
+.DetailedText {
+  font-size: 1rem;
+  color: var(--darkColorFull);
+}
+
+.DetailShow {
+  animation-name: details-Show;
+  animation-duration: 350ms;
+  animation-fill-mode: forwards;
+  transition-delay: 0ms;
+  transition-duration: 350ms;
+  opacity: 1;
+}
+
+@keyframes Details-Show {
+  from {
+    font-size: 0rem;
+    max-height: 0vh;
+  }
+  to {
+    max-height:100vh;
+    font-size: 1rem;
+  }
+}
+
+.Pic-animation {
+  animation-name: opacity;
+  animation-delay: 2s;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  opacity: 0%;
+}
+
+.ReactLogo {
+  height: 5rem;
+  stroke-width: 6px;
+  stroke: var(--darkColorFull);
+  fill: transparent;
+  pointer-events: none;
+}
+
+.responsiveSmallImg {
+  position: auto;
+  margin: 15px 0px 10px 10;
+  padding-top:10px;
+  width: 8vw;
+  height: auto;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .ReactLogo {
+    animation: ReactLogo-spin infinite 20s linear;
+  }
+}
+
+@keyframes ReactLogo-spin {
   from {
     transform: rotate(0deg);
   }
@@ -36,3 +229,23 @@
     transform: rotate(360deg);
   }
 }
+
+@media only screen and (max-width: var(--mainWidth)) {
+ 
+    .DetailedText {
+      font-size: 1.2rem;
+      padding: 1.5em;
+      }
+
+    .IngressRamme {
+      flex-direction:column-reverse;
+      justify-content: center;
+      margin: auto;
+      width: fit-content;
+    }
+    
+    .Header-box {
+      width: fit-content;
+      justify-content: center;
+    }
+  }
